@@ -1,0 +1,19 @@
+﻿@{
+    List<Product> products = Model;
+}
+
+<section id="products">
+    <div class="container">
+
+        <div class="row">
+
+
+            @await Component.InvokeAsync("Product")
+
+            @*<partial name="_ProductItemPartialView" model="product" />*@
+
+
+
+        </div>
+    </div>
+</section>

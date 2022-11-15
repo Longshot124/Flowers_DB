@@ -3,6 +3,7 @@ using Flowers_DB.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Flowers_DB.Migrations
 {
     [DbContext(typeof(FlowersDbContext))]
-    partial class FlowersDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221115163315_Discount_added_to_Product")]
+    partial class Discount_added_to_Product
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

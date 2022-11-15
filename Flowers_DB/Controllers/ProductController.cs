@@ -18,6 +18,11 @@ namespace Flowers_DB.Controllers
             var products = _dbContext.Products.Include(c=>c.Category).ToList();
             return View(products);
         }
+        public IActionResult DiscountProduct()
+        {
+            var products = _dbContext.Products.Include(c => c.Category).ToList();
+            return View(products);
+        }
         public IActionResult Details(int? Id)
         {
             if (Id is null) return BadRequest();
