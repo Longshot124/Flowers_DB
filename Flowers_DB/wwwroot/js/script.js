@@ -66,6 +66,8 @@ $(document).ready(function () {
         }
     })
 
+   
+
     // ACCORDION 
 
     $(document).on('click', '.question', function()

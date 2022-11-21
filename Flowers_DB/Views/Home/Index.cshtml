@@ -81,15 +81,19 @@
                     </div>
                 </div>
                 <div class="row">
+
                     @foreach (var product in products)
                     {
-                    
-                        <partial name="_ProductItemPartialView" model="product" />
-
+                        @await Html.PartialAsync("_ProductItemPartialVIew", product)
                     }
-                   
-                   
-                </div>
+
+           @* @/*await Component.InvokeAsync("Product")*/*@
+
+            @*<partial name="_ProductItemPartialView" model="product" />*@
+
+
+
+        </div>
             </div>
         </section>
 

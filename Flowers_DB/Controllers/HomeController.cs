@@ -1,7 +1,9 @@
 ﻿using Flowers_DB.DAL;
+using Flowers_DB.Models;
 using Flowers_DB.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace Flowers_DB.Controllers
 {
@@ -16,6 +18,9 @@ namespace Flowers_DB.Controllers
 
         public IActionResult Index()
         {
+            HttpContext.Session.SetString("session", "Test");
+            Response.Cookies.Append("cookie", "RZ390",new CookieOptions { Expires = DateTimeOffset.Now.AddHours(1) });
+
             var sliderImages = _dbContext.SliderImages.ToList();
             var slider = _dbContext.Sliders.SingleOrDefault();
             var category = _dbContext.Categories.ToList();
@@ -30,5 +35,25 @@ namespace Flowers_DB.Controllers
             };
             return View(homeViewModel);
         }
+
+        //public IActionResult Basket()
+        //{
+        //    var session = HttpContext.Session.GetString("session");
+        //    var cookie = Request.Cookies["cookie"];
+        //    return NoContent();
+        //}
+        //public IActionResult AddToBasket(int id)
+        //{
+        //    var product = _dbContext.Products.Include(x => x.Category).SingleOrDefault(x => x.Id == id);
+
+        //    if (product == null)
+        //        return NotFound();
+        //    var products = new List<Product>();
+        //    products.Add(product);
+        //    var productJson = JsonConvert.SerializeObject(products, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+        //    Response.Cookies.Append("basket",productJson);
+
+        //    return Json(products);
+        //}
     }
 }

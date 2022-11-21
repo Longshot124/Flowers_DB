@@ -12,6 +12,17 @@
     <link rel="stylesheet" href="~/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="~/owlcarousel/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/basket/css/main.css">
+    <link rel="stylesheet" href="~/basket/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/basket/css/linearicons.css">
+    <link rel="stylesheet" href="~/basket/css/themify-icons.css">
+    <link rel="stylesheet" href="~/basket/css/nice-select.css">
+
+
+
+
+
+
     <title>Fiorello &#8211; A Flower Shop and Florist WooCommerce Theme</title>
 </head>
 
@@ -157,12 +168,9 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item my-auto shop-cart">
-                                    <i class="fas fa-shopping-bag"></i>
-                                    <sup class="rounded-circle">0</sup>
-                                    <span>CART ($0)</span>
-                                    <ul class="list-unstyled py-3">
-                                        <li class="">No products in the cart.</li>
-                                    </ul>
+                                   <a asp-controller="Basket" asp-action="Basket"> <i class="fas fa-shopping-bag"></i></a>
+                                    <sup class="rounded-circle">0</sup>          
+                                   
                                 </li>
                             </ul>
                         </div>
@@ -398,6 +406,9 @@
     <script src="https://kit.fontawesome.com/e5e249fce2.js" crossorigin="anonymous"></script>
     <script src="~/owlcarousel/owl.carousel.min.js"></script>
     <script src="~/js/script.js"></script>
+    <script src="~/js/basket.js"></script>
+
+    <
 </body>
 
 </html>

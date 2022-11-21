@@ -18,7 +18,10 @@
                     <h6>@product.Name</h6>
                 </div>
                 <div class="price">
-                    <span class="text-black-50">Add to cart</span>
+                <button class="btn btn-success" id="add-to-cart" value="@product.Id">Add To Basket</button>
+                <br>
+                <br>
+                       <a asp-controller="basket"  asp-action="basket" asp-route-id="@product.Id"> <span class="text-black-50 add-to-cart" data-id="@product.Id" >add </span> </a>
                 <span class="text-black-50">$@(product.Price - product.Price * product.Discount / 100)</span>
                 </div>
             </div>
